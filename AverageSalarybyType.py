@@ -24,6 +24,10 @@ salaries = {}
 for devType in uniquedev:
     dev = noNan.loc[noNan['DeveloperType'].str.contains(devType)]
     salaries[devType] = dev['Salary'].mean()
+    '''This is also used for Average Career Satisfaction by:
+    dev = noNan.loc[noNan['DeveloperType'] == (devType)] #unique developer types
+    salaries[devType] = dev['CareerSatisfaction'].mean()'''
+    
 del salaries['Other']
 
 # make a pandas dataframe and plot a horizontal bar chart
